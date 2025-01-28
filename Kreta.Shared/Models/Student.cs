@@ -11,8 +11,9 @@ namespace Kreta.Shared.Models
         public int SchoolYear { get; set; }
         public SchoolClassType SchoolClass { get; set; }
         public string EducationLevel { get; set; } = string.Empty;
+        public bool IsWoman { get; set; }
         public bool HasId => Id != Guid.Empty;
-
+        public bool IsMan => !IsWoman;
         public override string ToString()
         {
             return $"{Id} {LastName} {FirstName} ({SchoolYear}.{SchoolClass}) - ({String.Format("{0:yyyy.MM.dd.}", BirthsDay)}) ({EducationLevel})";
