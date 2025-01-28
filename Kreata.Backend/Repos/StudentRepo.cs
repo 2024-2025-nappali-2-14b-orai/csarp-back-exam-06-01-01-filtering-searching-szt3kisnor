@@ -20,12 +20,22 @@ namespace Kreata.Backend.Repos
 
         public async Task<int> GetNumberOfManAsync()
         {
-            return await _dbSet!.CountAsync(s => s.IsMan);
+            return await _dbSet!.CountAsync(s => !s.IsWoman);
         }
 
         public async Task<int> GetNumberOfStudnetAsync()
         {
             return await _dbSet!.CountAsync();
+        }
+
+        public async Task<int> GetNumberOfStudnetsBornIn2021Async()
+        {
+            return await _dbSet!.CountAsync(s => s.BirthsDay.Year == 2021);
+        }
+
+        public async Task<int> GetNumberOfStudnetsBornInAprilAsync()
+        {
+            return await _dbSet!.CountAsync(s => s.BirthsDay.Month == 4);
         }
 
         public async Task<int> GetNumberOfWomanAsync()
