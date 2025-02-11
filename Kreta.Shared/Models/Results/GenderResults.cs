@@ -9,6 +9,6 @@ namespace Kreta.Shared.Models.Results
     public class GenderResults
     {
         public int NumberOfWoman { get; set; }
-        public int NumberOfMan { get; set;
+        public int NumberOfMan { get; set; }
     }
 }
